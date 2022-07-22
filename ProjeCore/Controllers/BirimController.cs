@@ -36,5 +36,12 @@ namespace ProjeCore.Controllers
             return RedirectToAction("Index");
 
         }
+        public IActionResult BringUnits(int id)
+        {
+            var values = c.Birims.Find(id);
+
+            return View("BringUnits", values);
+
+        }
     }
 }
