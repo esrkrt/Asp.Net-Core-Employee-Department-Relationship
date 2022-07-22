@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProjeCore.Models;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace ProjeCore.Controllers
         Context c = new Context();
         public IActionResult Index()
         {
-            var value = c.Personels.ToList();
+            var value = c.Personels.Include(x => x.Birim).ToList();
             return View(value);
         }
     }
