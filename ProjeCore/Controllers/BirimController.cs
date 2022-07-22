@@ -15,5 +15,18 @@ namespace ProjeCore.Controllers
             var value = c.Birims.ToList();
             return View(value);
         }
+        [HttpGet]
+        public IActionResult AddUnits()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddUnits(Birim b)
+        {
+            c.Birims.Add(b);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }
