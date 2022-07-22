@@ -28,5 +28,13 @@ namespace ProjeCore.Controllers
             return RedirectToAction("Index");
 
         }
+        public IActionResult DeleteUnits(int id)
+        {
+            var value = c.Birims.Find(id);
+            c.Birims.Remove(value);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }
