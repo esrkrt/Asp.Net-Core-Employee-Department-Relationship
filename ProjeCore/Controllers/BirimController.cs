@@ -43,5 +43,12 @@ namespace ProjeCore.Controllers
             return View("BringUnits", values);
 
         }
+        public IActionResult UpdateUnits(Birim d)
+        {
+            var values = c.Birims.Find(d.BirimID);
+            values.BirimAd = d.BirimAd;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
