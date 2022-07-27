@@ -53,7 +53,8 @@ namespace ProjeCore.Controllers
         public IActionResult DetailUnits(int id)
         {
             var values = c.Personels.Where(x => x.BirimID == id).ToList();
-
+            var values1 = c.Birims.Where(x => x.BirimID == id).Select(y=>y.BirimAd).FirstOrDefault();
+            ViewBag.brm = values1;
             return View( values);
 
         }
