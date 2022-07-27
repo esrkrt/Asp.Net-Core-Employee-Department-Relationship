@@ -39,5 +39,13 @@ namespace ProjeCore.Controllers
             return RedirectToAction("Index");
 
         }
+        public IActionResult DeleteEmployee(int id)
+        {
+            var value = c.Personels.Find(id);
+            c.Personels.Remove(value);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }

@@ -15,7 +15,6 @@
         <th>BİRİM</th>
         <th>SİL</th>
         <th>GÜNCELLE</th>
-        <th>DETAYLAR</th>
 
     </tr>
     @foreach (var k in Model)
@@ -26,9 +25,8 @@
             <td>@k.PersonelSoyad</td>
             <td>@k.PersonelSehir</td>
             <td>@k.Birim.BirimAd</td>
-            <td><a href="#" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Personel/DeleteEmployee/@k.PersonelID" class="btn btn-danger">SİL</a></td>
             <td><a href="#" class="btn btn-warning">GÜNCELLE</a></td>
-            <td><a href="#" class="btn btn-primary">DETAYLAR</a></td>
 
 
         </tr>
