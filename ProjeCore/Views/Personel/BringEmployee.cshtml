@@ -7,7 +7,7 @@
 
 <h2>Personel Güncelleme Sayfası</h2>
 <br />
-@using (Html.BeginForm("BringEmployee", "Personel", FormMethod.Post))
+@using (Html.BeginForm("UpdateEmployee", "Personel", FormMethod.Post))
 {
 <form class="form-group" method="post">
     @Html.Label("Personel ID:")
@@ -22,11 +22,9 @@
     @Html.Label("Personel Şehir:")
     @Html.TextBoxFor(x => x.PersonelSehir, new { @class = "form-control" })
     <br />
-    @Html.Label("Personel Birim:")
-    @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
-    <br />
+   
     @Html.Label("Birim")
-    @Html.DropDownListFor(x => x.Birim.BirimID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.BirimID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
     <br />
     @Html.HiddenFor(x => x.PersonelID)
     <button class=" btn btn-success">Kaydet</button>

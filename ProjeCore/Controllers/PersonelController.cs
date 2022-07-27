@@ -61,5 +61,16 @@ namespace ProjeCore.Controllers
             return View("BringEmployee", per);
 
         }
+        public IActionResult UpdateEmployee(Personel p)
+        {
+            var values = c.Personels.Find(p.PersonelID);
+            values.PersonelAd = p.PersonelAd;
+            values.PersonelAd = p.PersonelAd;
+            values.PersonelSoyad = p.PersonelSoyad;
+            values.PersonelSehir = p.PersonelSehir;
+            values.BirimID = p.BirimID;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
