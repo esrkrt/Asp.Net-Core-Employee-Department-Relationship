@@ -47,5 +47,19 @@ namespace ProjeCore.Controllers
             return RedirectToAction("Index");
 
         }
+        public IActionResult BringEmployee(int id)
+        {
+            List<SelectListItem> values = (from x in c.Birims.ToList()
+                                         select new SelectListItem
+                                         {
+                                             Text = x.BirimAd,
+                                             Value = x.BirimID.ToString()
+                                         }).ToList();
+            ViewBag.dgr = values;
+
+            var per = c.Personels.Find(id);
+            return View("BringEmployee", per);
+
+        }
     }
 }
