@@ -50,5 +50,13 @@ namespace ProjeCore.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public IActionResult DetailUnits(int id)
+        {
+            var values = c.Personels.Where(x => x.BirimID == id).ToList();
+
+            return View( values);
+
+        }
+
     }
 }

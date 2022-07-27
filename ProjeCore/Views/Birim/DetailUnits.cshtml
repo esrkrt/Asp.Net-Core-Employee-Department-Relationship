@@ -1,0 +1,32 @@
+﻿
+@using ProjeCore.Models
+@model List<Personel>
+@{
+    ViewData["Title"] = "DetailUnits";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<br />
+<table class="table table-bordered">
+
+    <tr>
+        <th>PERSONEL ID</th>
+        <th>PERSONEL AD</th>
+        <th>PERSONEL SOYAD</th>
+        <th>PERSONEL ŞEHİR</th>
+
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.PersonelID</td>
+            <td>@k.PersonelAd</td>
+            <td>@k.PersonelSoyad</td>
+            <td>@k.PersonelSehir</td>
+           
+        </tr>
+    }
+</table>
+
+
+
+
